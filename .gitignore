@@ -1,2 +1,5 @@
 # Ignore all files in the resources directory
 Resources
+
+# Ignore all files having the .class extension
+*.class
