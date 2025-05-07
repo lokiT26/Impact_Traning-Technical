@@ -4,32 +4,31 @@ import java.util.Scanner;
 
 public class treasure_finder {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        int c = sc.nextInt();
+        try (Scanner sc = new Scanner(System.in)) {
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            int c = sc.nextInt();
 
-        int min = Math.min(a, Math.min(b, c));
-        int treasure_box = 0;
+            int min = Math.min(a, Math.min(b, c));
+            int treasure_box = 0;
 
-        if (a > b && a > c) {
-            treasure_box = Math.max(b, c);
-        } else if (b > a && b > c) {
-            treasure_box = Math.max(a, c);
-        } else {
-            treasure_box = Math.max(a, b);
-        }
-
-        int i;
-        for (i = min; i >= 1; i--){
-            if (a % i == 0 && b % i == 0 && c % i == 0) {
-                break;
+            if (a > b && a > c) {
+                treasure_box = Math.max(b, c);
+            } else if (b > a && b > c) {
+                treasure_box = Math.max(a, c);
+            } else {
+                treasure_box = Math.max(a, b);
             }
+
+            int i;
+            for (i = min; i >= 1; i--){
+                if (a % i == 0 && b % i == 0 && c % i == 0) {
+                    break;
+                }
+            }
+
+            System.out.println("The treasure is in the box which has the number " + treasure_box);
+            System.out.println("The code to open the box is " + i);
         }
-
-        System.out.println("The treasure is in the box which has the number " + treasure_box);
-        System.out.println("The code to open the box is " + i);
-
-        sc.close();
     }
 }
