@@ -3,3 +3,6 @@ Resources
 
 # Ignore all files having the .class extension
 *.class
+
+# Ignore files in the .vscode directory
+.vscode
